@@ -12,10 +12,14 @@
 
   <body>
     <header>
-      <% if user_signed_in? %> <!--deviseが用意しているヘルパーメソッド-->
+      <% if user_signed_in? %>
+      <!--deviseが用意しているヘルパーメソッド-->
       <!--ログイン済みならば true が、ログインしていなければ false が返されます。
-ログイン済みの場合、 if user_signed_in? から else 間のコードが表示されます。
-ログインしていない場合、 else から end 間のコードが表示されます。-->
+      ログイン済みの場合、 if user_signed_in? から else 間のコードが表示されます。
+      ログインしていない場合、 else から end 間のコードが表示されます。-->
+        <li>
+          <%= link_to '投稿フォーム', new_post_image_path %>
+        </li>
         <li>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         </li>

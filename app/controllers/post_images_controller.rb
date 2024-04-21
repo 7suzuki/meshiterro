@@ -22,7 +22,7 @@ class PostImagesController < ApplicationController
   def destroy
     post_image = PostImage.find(params[:id])
     post_image.destroy
-    redirect_to '/post_images' #一覧ページへ画面遷移
+    redirect_to post_images_path #一覧ページへ画面遷移
   end  
   # 投稿データのストロングパラメータ
   private

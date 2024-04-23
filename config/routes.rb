@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 # get URL =>アクション名、asパス名
 # get URLのとき/最初のスラッシュは不要  
   
-  resources :post_images, only: [:new, :create, :index, :show, :destroy]
+  resources :post_images, only: [:new, :create, :index, :show, :destroy] do
+    resources :post_comments, only: [:create, :destroy]
+  end
   # get 'post_images/new'
   # get 'post_images/index'
   # get 'post_images/show'

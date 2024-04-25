@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 # get URLのとき/最初のスラッシュは不要  
   
   resources :post_images, only: [:new, :create, :index, :show, :destroy] do
+    resource :favorite, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
   # get 'post_images/new'

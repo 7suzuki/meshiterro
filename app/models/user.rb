@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
 has_many :post_images, dependent: :destroy
 has_many :post_comments, dependent: :destroy
+has_many :favorites, dependent: :destroy
 # ユーザーごとのプロフィール画像をアップロードできるようにする
 has_one_attached :profile_image
 

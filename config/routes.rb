@@ -4,6 +4,11 @@ Rails.application.routes.draw do
     sessions: 'admin/sessions'
   }
   
+  namespace :admin do
+    get 'dashboards', to: 'dashboards#index'
+    resources :users, only: [:destroy]
+  end
+  
   devise_for :users
   root to: 'homes#top'
   get 'homes/about' =>'homes#about', as: 'about'
